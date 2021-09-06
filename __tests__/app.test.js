@@ -13,3 +13,17 @@ describe('Palindrom', () => {
       expect(app.isPalindrom('coucou')).toEqual(false);
     });
   });
+
+  describe('Moderator', () => {
+    it('contains forbidden word', () => {
+      expect(app.containsForbiddenWords('Vous êtes tous des truffes')).toEqual(
+        true
+      );
+    });
+  
+    it('does NOT contains forbidden word', () => {
+      expect(app.containsForbiddenWords('Hello World')).toEqual(false);
+    });
+  
+    it.todo('removes forbidden word');
+  });
