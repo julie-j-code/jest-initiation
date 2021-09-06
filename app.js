@@ -11,7 +11,7 @@ function containsForbiddenWords(message) {
   const messageWords = message.split(' ');
   let detectedForbiddenWords = [];
   for (let index = 0; index < messageWords.length; index++) {
-    const word = messageWords[index];
+    const word = messageWords[index].toLocaleLowerCase();
     if (forbiddenWords.includes(word)) {
       detectedForbiddenWords.push(word);
     }
@@ -23,8 +23,25 @@ function containsForbiddenWords(message) {
   return false;
 }
 
+function removeForbiddenWords(message) {
+    const hasForbiddenWords = containsForbiddenWords(message);
+    if (!hasForbiddenWords) {
+        return message;
+    }
+    const words = message.split(' ');
+    const result = words.map(w => {
+        if(forbiddenWords.includes(w.toLocaleLowerCase())) {
+            return 'xxx';
+        } else {
+            return w
+        }
+    });
+    return result.join(' ');
+}
+
 module.exports = {
   sentence,
   isPalindrom,
   containsForbiddenWords,
+  removeForbiddenWords
 };
