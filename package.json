@@ -1,0 +1,17 @@
+{
+  "name": "jest-initiation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/jest": "^27.0.1",
+    "jest": "^27.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --watchAll --verbose",
+    "test:cov": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC"
+}
